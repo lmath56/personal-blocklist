@@ -1,34 +1,46 @@
 # This file contains domains that I want blocked on my network.
-||ibroadlink.com^
-||lss.lgthinq.com^
-||discovery.meethue.com^
-||wondershare.com^
-||xxxjmp.com^
-||ueiwsp.com^
-||au.lgtvsdp.com^
-||snu.lge.com^
-||push-short-us.heytapmobile.com^
-||hlssnapchatssl-a.akamaihd.net^
-||app-analytics.snapchat.com^
-||usc.adserver.snapads.com^
+
+#And here's the pattern that Apple recommends using to block regular domains, as it blocks subdomains and is balanced enough, so you are less likely to see any side effects.
+#^https?://+([^:/]+\.)?domain\.com[:/]
+
+#Let’s break it down into smaller parts:
+#    ^https?://+ matches http:// and https:// and makes sure that there is no text before the URL; 
+#    ([^:/]+\.)? targets all subdomains if there are any;
+#    domain\.com matches the domain itself;
+#    [:/] this tiny part blocks the domain even if the URL contains an extra part after .com. For example, domain.com/page or domain.com:8000
+
+# https://support.1blocker.com/en/articles/6436164-using-regex-to-block-urls
+
+^https?://+([^:/]+\.)?ibroadlink\.com[:/]
+^https?://+([^:/]+\.)?lss.lgthinq\.com[:/]
+^https?://+([^:/]+\.)?discovery.meethue\.com[:/]
+^https?://+([^:/]+\.)?wondershare\.com[:/]
+^https?://+([^:/]+\.)?xxxjmp\.com[:/]
+^https?://+([^:/]+\.)?ueiwsp\.com[:/]
+^https?://+([^:/]+\.)?au.lgtvsdp\.com[:/]
+^https?://+([^:/]+\.)?snu.lge\.com[:/]
+^https?://+([^:/]+\.)?push-short-us.heytapmobile\.com[:/]
+^https?://+([^:/]+\.)?hlssnapchatssl-a.akamaihd\.net[:/]
+^https?://+([^:/]+\.)?app-analytics.snapchat\.com[:/]
+^https?://+([^:/]+\.)?usc.adserver.snapads\.com[:/]
 
 
 # Anything Reupert Merdoch
-||theaustralian.com.au^
-||couriermail.com.au^
-||heraldsun.com.au^
-||news-mail.com.au^
-||bodyandsoul.com.au^
-||townsvillebulletin.com.au^
-||theweeklytimes.com.au^
-||cairnspost.com.au^
-||ntnews.com.au^
-||advertiser.com.au^
-||goldcoastbulletin.com.au^
-||themercury.com.au^
-||dailytelegraph.com.au^
-||news.com.au^
-||gq.com.au^
-||taste.com.au^
-||vogue.com.au^
-||foxnews.com.au^
+^https?://+([^:/]+\.)?theaustralian\.com.au[:/]
+^https?://+([^:/]+\.)?couriermail\.com.au[:/]
+^https?://+([^:/]+\.)?heraldsun\.com.au[:/]
+^https?://+([^:/]+\.)?news-mail\.com.au[:/]
+^https?://+([^:/]+\.)?bodyandsoul\.com.au[:/]
+^https?://+([^:/]+\.)?townsvillebulletin\.com.au[:/]
+^https?://+([^:/]+\.)?theweeklytimes\.com.au[:/]
+^https?://+([^:/]+\.)?cairnspost\.com.au[:/]
+^https?://+([^:/]+\.)?ntnews\.com.au[:/]
+^https?://+([^:/]+\.)?advertiser\.com.au[:/]
+^https?://+([^:/]+\.)?goldcoastbulletin\.com.au[:/]
+^https?://+([^:/]+\.)?themercury\.com.au[:/]
+^https?://+([^:/]+\.)?dailytelegraph\.com.au[:/]
+^https?://+([^:/]+\.)?news\.com.au[:/]
+^https?://+([^:/]+\.)?gq\.com.au[:/]
+^https?://+([^:/]+\.)?taste\.com.au[:/]
+^https?://+([^:/]+\.)?vogue\.com.au[:/]
+^https?://+([^:/]+\.)?foxnews\.com.au[:/]
